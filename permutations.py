@@ -1,4 +1,5 @@
 from itertools import permutations
+from nltk.corpus import wordnet
 from nltk.corpus import words
 
 list_of_letters = []
@@ -17,6 +18,6 @@ for i in list(perm):
 print('Possible words are listed below: \n')
 print('===================================')
 for i in range(len(new_list)):
-    if(new_list[i] in words.words()):
+    if(wordnet.synsets(new_list[i]) or new_list[i] in words.words()):
         print(new_list[i])
 print('===================================')
